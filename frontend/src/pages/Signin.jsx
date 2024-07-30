@@ -3,7 +3,7 @@ import Heading from '../components/Heading'
 import SubHeading from '../components/SubHeading'
 import InputComponent from '../components/InputComponent'
 import BottomWarning from '../components/BottomWarning'
-import Button from '../components/Button'
+import {Button} from '../components/Button'
 
 function Signin() {
   return (

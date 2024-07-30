@@ -1,8 +1,8 @@
 import React from 'react'
-
+import {SendMoney} from '../components/SendMoney'
 function Sendmoney() {
   return (
-    <div>Sendmoney</div>
+    <SendMoney />
   )
 }
 
