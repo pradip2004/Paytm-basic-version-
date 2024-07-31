@@ -16,7 +16,8 @@ router.get("/balance", authMiddleware, async (req, res)=>{
 })
 
 router.post("/transfer", authMiddleware, async (req, res) => {
-      const session = await mongoose.startSession();
+    try{
+        const session = await mongoose.startSession();
   
       session.startTransaction();
       const { amount, to } = req.body;
@@ -49,6 +50,11 @@ router.post("/transfer", authMiddleware, async (req, res) => {
       res.json({
           message: "Transfer successful"
       });
+    }catch(err){
+        console.error("Error in /transfer endpoint:", err);
+        res.status(500).json({ message: "Internal server error" });
+    }
+      
   });
 
 module.exports = router;
